@@ -14,7 +14,6 @@ class CollectionToYamlFileDumper
     public static function collectionToFile(DomainCollection $collection, $outputPath, $requiredLanguages = [])
     {
         $locales = CollectionUtil::getLocales($collection, $requiredLanguages);
-        dump($locales);
 
         $associativeArray = CollectionUtil::toArray($collection, $locales);
 
@@ -24,7 +23,6 @@ class CollectionToYamlFileDumper
             foreach ( $locales as $locale )
             {
                 $path = sprintf( "%s%s%s.%s.yaml", $outputPath, DIRECTORY_SEPARATOR, $domain->getName(), $locale );
-                dump($path);
 
                 if ( isset( $associativeArray[ $domain->getName() ][ $locale ] ) )
                 {
