@@ -22,7 +22,7 @@ class ConvertCommand extends Command
     protected function configure()
     {
         $this
-            ->setDescription("Find document according to specific path.")
+            ->setDescription("Generate a copy of the translations in a separate folder and order all key alphabetically, flatten keys.")
             ->addArgument('path', InputArgument::REQUIRED, 'Where to search')
             ->addArgument('name', InputArgument::REQUIRED, 'The name to match (please read https://symfony.com/doc/current/components/finder.html)')
             ->addArgument('output', InputArgument::REQUIRED, 'Where to store new generated files')

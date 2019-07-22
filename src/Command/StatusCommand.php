@@ -41,7 +41,7 @@ class StatusCommand extends Command implements CollectionFactoryObserverInterfac
         $collection = CollectionFactory::createFromFinder( $finder, $this );
 
 
-        if ($collection->getDomains() == NULL) //$output->writeln( var_dump($collection) );
+        if ($collection->getDomains() == NULL)
         {
             //$output->writeln( sprintf( "<comment>No domain found! Check the entered path and name are correct.</comment>\n") );
             //return;

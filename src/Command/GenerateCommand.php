@@ -12,7 +12,7 @@ use Symfony\Component\Finder\Finder;
 
 class GenerateCommand extends Command
 {
-    protected static $defaultName = 'generate';
+    protected static $defaultName = 'clean';
 
     /** @var  OutputInterface */
     protected $output;

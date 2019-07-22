@@ -18,9 +18,9 @@ class XlsxYamlCommand extends Command
     protected function configure()
     {
         $this
-            ->setDescription('Add a short description for your command')
+            ->setDescription('convert xlsx to yaml translation files')
             ->addArgument('xlsx', InputArgument::REQUIRED, 'Where to search')
-            ->addArgument('output', InputArgument::REQUIRED, 'Where to store new generated files');
+            ->addArgument('output', InputArgument::REQUIRED, 'Where to store new newly generated files');
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)

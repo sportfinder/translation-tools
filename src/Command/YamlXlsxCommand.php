@@ -20,7 +20,7 @@ class YamlXlsxCommand extends Command
     protected function configure()
     {
         $this
-            ->setDescription("Find translations and generate clean and complete files.")
+            ->setDescription("convert yaml translation files to xlsx.")
             ->addArgument('path', InputArgument::REQUIRED, 'Where to search')
             ->addArgument('name', InputArgument::REQUIRED, 'The name to match (please read https://symfony.com/doc/current/components/finder.html)')
             ->addArgument('output', InputArgument::REQUIRED, 'Where to store new generated files')
@@ -41,7 +41,6 @@ class YamlXlsxCommand extends Command
         $collection = CollectionFactory::createFromFinder($finder);
         $locales = CollectionUtil::getLocales($collection, $requiredLanguages);
         $associativeArray = CollectionUtil::toArrayKeyFirst($collection, $locales);
-        dump(array_slice($associativeArray['messages'], 0, 10));
 
         if (file_exists($outputPath)) {
             unlink($outputPath);
