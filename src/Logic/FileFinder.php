@@ -6,7 +6,7 @@
  * Time: 10:07
  */
 
-namespace Logic;
+namespace App\Logic;
 
 use Symfony\Component\Finder\Finder;
 

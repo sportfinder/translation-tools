@@ -6,7 +6,7 @@
  * Time: 10:12
  */
 
-namespace Util;
+namespace App\Util;
 
 
 class YamlFlattener

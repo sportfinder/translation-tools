@@ -1,12 +1,6 @@
 <?php
-/**
- * Created by IntelliJ IDEA.
- * User: Benjamin
- * Date: 10-08-17
- * Time: 12:04
- */
 
-namespace Translation;
+namespace App\Translation;
 
 class Domain
 {
@@ -37,9 +31,24 @@ class Domain
         }
         foreach ( $translations as $key => $value )
         {
-            $key = $this->getKey( $key );
-            $key->addValueForLocale( $locale, $value );
+//            $key = $this->getKey( $key );
+//            $key->addValueForLocale( $locale, $value );
+            $this->addTranslation($key, $value, $locale);
         }
+    }
+
+    public function addTranslation($key, $translation, $locale)
+    {
+        if(is_array($translation))
+        {
+            foreach ($translation as $subKey => $subTranslation) {
+                $newKey = sprintf("%s.%s", $key, $subKey);
+                $this->addTranslation($newKey, $subTranslation, $locale);
+            }
+            return;
+        }
+        $key = $this->getKey( $key );
+        $key->addValueForLocale( $locale, $translation );
     }
 
     /**
@@ -92,6 +101,16 @@ class Domain
             return;
         }
         $this->locales[] = $locale;
+    }
+
+    /**
+     * @param array $locales
+     * @return Domain
+     */
+    public function setLocales($locales)
+    {
+        $this->locales = $locales;
+        return $this;
     }
 
     /**

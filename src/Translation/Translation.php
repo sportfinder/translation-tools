@@ -1,12 +1,6 @@
 <?php
-/**
- * Created by IntelliJ IDEA.
- * User: Benjamin
- * Date: 10-08-17
- * Time: 12:04
- */
 
-namespace Translation;
+namespace App\Translation;
 
 class Translation
 {

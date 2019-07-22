@@ -1,12 +1,6 @@
 <?php
-/**
- * Created by IntelliJ IDEA.
- * User: Benjamin
- * Date: 10-08-17
- * Time: 10:52
- */
 
-namespace Translation;
+namespace App\Translation;
 
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Yaml\Yaml;
@@ -14,7 +8,7 @@ use Symfony\Component\Yaml\Yaml;
 class CollectionFactory
 {
 
-    public static function createFromFinder(Finder $finder, CollectionFactoryObserverInterface $observer)
+    public static function createFromFinder(Finder $finder, CollectionFactoryObserverInterface $observer = null)
     {
         $collection = new DomainCollection();
         foreach ( $finder as $file )
