@@ -16,6 +16,19 @@ The tools help symfony developers to sync their translation between branches or 
 * clone this repository: `git clone https://github.com/sportfinder/translation-tools.git`
 * install vendors: `composer install`
 
+## php bin/console clean
+
+This command will search for your translations files and create a clean copy of them ordered alphabetically and add #fixme
+where translation is missing.
+
+### arguments
+
+* path: where to find yaml translation files (eg: `/path/to/your/project/translations/` )
+* name: the pattern of the yaml translation files (most of the time: `.yaml` )
+* output: file to generate (eg `/path/to/your/excel.xlsx`)
+* locales: add as many locale as you want (eg: `fr nl en`, in my case I have *fr* and *en*, and you want to add *nl*.)
+
+
 ## php bin/console yaml:xlsx
 
 ### arguments
